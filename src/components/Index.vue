@@ -1,6 +1,8 @@
 <template>
     <div class="index">
-        <Tab :data="data"/>
+        <Tab :data="data" :renderContent="renderContent">
+            <h1 slot>我是h1</h1>
+        </Tab>
         Index
     </div>
 </template>
@@ -14,11 +16,20 @@ export default {
     },  
     data () {
         return {
-            data: [{}, {}, {}]
+            data: [{
+                text: '登录'
+            }, {
+                text: '注册'
+            }]
         }
     },
-    beforeCreate () {
+    beforeCreate() {
         console.log('beforeCreate')
+    },
+    methods: {
+        renderContent(index) {
+            return `<div>${index}</div>`;
+        }
     }
 }
 </script>

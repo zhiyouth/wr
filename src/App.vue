@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import './assets/css/reset.css';
 import HelloWorld from './components/HelloWorld'
 import Index from './components/Index'
 
